@@ -1,0 +1,49 @@
+Name:                   gtk-samples
+Version:                0.0.0
+Author:                 Tatsuya.Nishiyama <nishiyama.hs@gmail.com>
+Maintainer:             Tatsuya.Nishiyama <nishiyama.hs@gmail.com>
+License:                BSD3
+License-File:           LICENSE
+-- Synopsis:               
+-- Description:            
+Cabal-Version:          >= 1.10
+Build-Type:             Simple
+Extra-Source-Files:     README.md, ChangeLog.md
+
+Library
+  Default-Language:     Haskell2010
+  HS-Source-Dirs:       src
+  GHC-Options:          -Wall
+  Exposed-Modules:      Gtk.Samples
+  Other-Modules:        Gtk.Samples.Internal
+  Build-Depends:        base >= 4 && < 5
+                      , gtk3 >= 0.13.8
+                      , transformers >= 0.4.3.0
+
+executable sample
+  main-is:             Main.hs
+  -- other-modules:       
+  other-extensions:    RecordWildCards, ScopedTypeVariables
+  build-depends:       base >= 4 && < 5
+                     , glib
+                     , gtk3
+                     , gtk3 >= 0.13.8
+                     , transformers >= 0.4.3.0
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+Test-Suite spec
+  Type:                 exitcode-stdio-1.0
+  Default-Language:     Haskell2010
+  Hs-Source-Dirs:       src
+                      , test
+  Ghc-Options:          -Wall
+  Main-Is:              Spec.hs
+  Build-Depends:        base
+                      , gtk3 >= 0.13.8
+                      , hspec
+                      , transformers >= 0.4.3.0
+
+Source-Repository head
+  Type:                 git
+--  Location:             
